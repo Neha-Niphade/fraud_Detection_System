@@ -1,6 +1,6 @@
 # 🛡️ Fraud Sentinel AI
 
-**Fraud Sentinel AI** is a real-time, end-to-end Machine Learning web application designed to detect fraudulent transactions instantly. 
+**Fraud Sentinel** is a real-time, end-to-end Machine Learning web application designed to detect fraudulent transactions instantly. 
 
 Built with a **Flask API** backend for serving predictions, a sleek **Streamlit** frontend for real-time monitoring and analytics, and a **MySQL** database for secure log storage. The entire infrastructure is cleanly containerized using **Docker** and perfectly configured for cloud deployment on **AWS EC2**.
 
@@ -10,16 +10,16 @@ Built with a **Flask API** backend for serving predictions, a sleek **Streamlit*
 
 ---
 
-## ✨ Key Features
-* 🧠 **Machine Learning Engine**: High-speed, highly-accurate fraud classification using `scikit-learn`.
-* 📊 **Real-Time Analytics Dashboard**: Glassmorphism UI built with Streamlit and Plotly for deep visual insights and metrics.
-* 🚨 **Automated Alert System**: Instantly triggers email alerts via `smtplib` the moment a fraudulent transaction is detected.
-* 💾 **Persistent Database**: Automatically logs all transaction attempts (Fraud vs Secure) to a MySQL database.
-* 🐋 **Containerized Infrastructure**: Fully orchestrated with Docker Compose for seamless "`one-click`" deployment.
+## Key Features
+*  **Machine Learning Engine**: High-speed, highly-accurate fraud classification using `scikit-learn`.
+**Real-Time Analytics Dashboard**: Glassmorphism UI built with Streamlit and Plotly for deep visual insights and metrics.
+ **Automated Alert System**: Instantly triggers email alerts via `smtplib` the moment a fraudulent transaction is detected.
+**Persistent Database**: Automatically logs all transaction attempts (Fraud vs Secure) to a MySQL database.
+**Containerized Infrastructure**: Fully orchestrated with Docker Compose for seamless "`one-click`" deployment.
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 * **Frontend**: Streamlit, Plotly, Pandas
 * **Backend**: Python, Flask, Joblib
 * **Machine Learning**: Scikit-Learn, NumPy
@@ -28,7 +28,7 @@ Built with a **Flask API** backend for serving predictions, a sleek **Streamlit*
 
 ---
 
-## 🚀 Running Locally (Using Docker)
+## Running Locally (Using Docker)
 You don't need to manually install dependencies or set up a local database. Docker handles everything!
 
 ### Prerequisites:
@@ -50,7 +50,7 @@ You don't need to manually install dependencies or set up a local database. Dock
 
 ---
 
-## ☁️ Deploying to AWS EC2
+##  Deploying to AWS EC2
 
 This project includes a custom `deploy.sh` script specifically designed to set up the entire environment on a fresh AWS Ubuntu server automatically!
 
@@ -81,7 +81,7 @@ Once finished, your app is globally accessible at:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```text
 fraud_detection/
 ├── app.py                  # Flask API & Email Alert Logic
