@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: fraud_db
+    environment:
+      MYSQL_ROOT_PASSWORD: kk02
+      MYSQL_DATABASE: fraud_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+
+  api:
+    build: 
+      context: .
+      dockerfile: api.Dockerfile
+    container_name: fraud_api
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: kk02
+      DB_NAME: fraud_db
+      EMAIL_SENDER: kabadeketan2@gmail.com
+      EMAIL_RECEIVER: amanpokale06@gmail.com
+      EMAIL_PASSWORD: "zgzwgbknttreozgu"  # Should be overridden in production
+    ports:
+      - "5000:5000"
+    restart: always
+
+  dashboard:
+    build: 
+      context: .
+      dockerfile: dashboard.Dockerfile
+    container_name: fraud_dashboard
+    depends_on:
+      - api
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: kk02
+      DB_NAME: fraud_db
+      API_URL: http://api:5000
+    ports:
+      - "8501:8501"
+    restart: always
+
+volumes:
+  db_data:

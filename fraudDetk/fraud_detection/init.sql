@@ -1,0 +1,9 @@
+CREATE DATABASE IF NOT EXISTS fraud_db;
+USE fraud_db;
+
+CREATE TABLE IF NOT EXISTS transactions (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    features TEXT NOT NULL,
+    prediction VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
